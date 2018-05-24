@@ -20,7 +20,7 @@ def main():
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
     run_test_problem1a()
-    # run_test_problem1b()
+    run_test_problem1b()
 
 
 def run_test_problem1a():
@@ -93,12 +93,25 @@ def problem1a(numbers):
     # TODO: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    #total = 0
+    #for k in range(len(numbers)):
+    #    number = numbers[k]
+    #    print('Values', number, k)
+    #    last = numbers[len(numbers)-1]
+    #    print('last', last)
+
     total = 0
-    for k in range(len(numbers)):
-        number = numbers[k]
-        print('Values', number, k)
-        last = numbers[len(numbers)-1]
-        print('last', last)
+    last = numbers[len(numbers)-1]
+    total_len = len(numbers)
+    print(total_len)
+    new_total_len = total_len - 1
+    middle_k = new_total_len//2
+    print(middle_k)
+    middle = numbers[middle_k]
+    first = numbers[0]
+    print(last, first)
+    total = total + last + first + middle
+    return total
 
 
 def run_test_problem1b():
@@ -175,7 +188,11 @@ def problem1b(numbers):
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
-
+    for k in range(len(numbers)):
+        values = numbers[k]
+        total_len = len(numbers)-1
+        middle_section = total_len//3
+        for q in range()
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
