@@ -2,13 +2,13 @@
 Final exam, problem 2.
 
 Authors: David Mutchler, Dave Fisher, Matt Boutell, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  May 2018.
+         their colleagues and Colleen.  May 2018.
 
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import time
 import testing_helper
-
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -19,9 +19,9 @@ def main():
     print()
     print('Un-comment the calls in MAIN one by one')
     print(' to run the testing code as you complete the TODOs.')
-    # run_test_problem2a()
-    # run_test_problem2b()
-    # run_test_problem2c()
+    run_test_problem2a()
+    run_test_problem2b()
+    run_test_problem2c()
 
 
 def is_prime(n):
@@ -170,9 +170,15 @@ def problem2a(x, sequence):
       :type sequence:  [int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    new_sequence = []
+    for k in range(len(sequence)):
+        number = sequence[k]
+        if number > x:
+            new_sequence = new_sequence+[number]
+    return new_sequence
 
 
 def run_test_problem2b():
@@ -253,6 +259,17 @@ def problem2b(sequence):
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    largest_number = 0
+    largest_k = 0
+    for k in range(len(sequence)):
+        number = sequence[k]
+        final_number = abs(number)
+        print('final number', final_number)
+        if final_number > largest_number:
+            print('final ', final_number,'largest', largest_number)
+            largest_number = final_number
+            largest_k = [k]
+    return largest_k
 
 
 def run_test_problem2c():
@@ -396,7 +413,13 @@ def problem2c(x):
     # TODO: 4. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
-
+    if is_prime(x):
+       return x
+    else:
+        for k in range(len(x)):
+            number = x[k]
+            total_number = total_number + [number]
+            print('totalnumber', total_number)
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
